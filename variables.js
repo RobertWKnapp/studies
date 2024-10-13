@@ -28,26 +28,26 @@
 //      without a value it is automatically initialized with the field: undefined.  You have to declare a value 
 //      for const or it 
 var name; 
-console.log(name); // undefined
+console.log(name); // logs: undefined
 let age; 
-console.log(age);  // undefined
+console.log(age);  // logs: undefined
 const home;
-console.log(location);  // uncaught SyntaxError: missing initialzer in const declaration
+console.log(location);  // logs: uncaught SyntaxError: missing initialzer in const declaration
 
 // 1b. assignment - The assignment operator ( = ) is used to assign a value to the variable
 myName = 'Phil';
-console.log(myName); // Phil
+console.log(myName); // logs: Phil
 age = 59
-console.log(age);  // 59
+console.log(age);  // logs: 59
 home = 'Hawaii'
-console.log(home); // Hawaii
+console.log(home); // logs: Hawaii
 
 // 1c. re-assignment: var and let can be reassigned where the value changes to a new value.  The previous value is lost.
 //      const cannot be reassigned.
 myName = 'James';
-console.log(myName); // James
+console.log(myName); // logs: James
 age = 60;
-console.log(age); // 60
+console.log(age); // logs: 60
 home = 'lower 9';
-console.log(home); // uncaught typError: assignment to constant variable.
+console.log(home); // logs: uncaught typError: assignment to constant variable.
 
