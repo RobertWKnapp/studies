@@ -39,5 +39,8 @@
  *          The global or parent scope cannot see or modify the local variables within a functino.
  * 7. Closures: Functions form closures around the data they house. If an object returned from the function and is held in memory
  *      somewhere (referenced), that closure stays ALIVE, and data can continue to exist in these closures!
- *      Closures allow functions to "remember" their lexical scope.
+ *      Closures allow functions to "remember" their lexical scope even when they are executed outside of that scope. 
+ *      It is essentially 'capturing' that data within the functions memory.  If this function is returned and held somewhere
+ *      in the code (referenced), the closure remains active, allowing the data it holds to persist as long as the reference
+ *      exists, even if the outer function is no longer accessible.
  */
