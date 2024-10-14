@@ -44,7 +44,8 @@
  * 
  *  10: Infinity and -Infinity: Simple: This value is a special value which is bigger than any number value. The property
  *          is usually used in computations involving large numbers or mathmetical operations that result in a value that 
- *          is too larg to be represented by a standard number data type.  It is considered a number.
+ *          is too larg to be represented by a standard number data type.  It is considered a number. A number reaches 
+ *          infinity when it exceeds the upper limit for a number: 1.797693134862315E+308
  * 
  *  11: What is the difference between primitive/simple and complex data types: One of the biggest difference between 
  *          the two is that primitive/simple data types are stored by value - each variable holding a primitive value 
@@ -53,8 +54,58 @@
  * 
  *  12: Primitive values are passed to a function BY COPY, complex value are passed BY REFERENCE.
  *          What does that mean, and how are they different. 
- * 
- * 
- * 
- * 
+ *          Primitive values include types like number, string, boolean, null, and undefined.  When a primitive value
+ *          is passed into a function a copy of that value is passed.  This means that any changes made to the parameter
+ *          inside the function does not affect the original variable outside the function.
+ *          When complex values, such as an array, object or function, are passed to a function a reference to the memory 
+ *          location of the value is passed.  This means that any changes made to the object within the function will 
+ *          affect the original object outisde the function.
+ *          Main difference: pass by value keeps the original value unchanged; pass by reference can have the original
+ *          value modified.  Pass by value creates a copy of the value which requires additional memory while pass by 
+ *          reference only passes the memory address which makes it more efficient for large data structures.
  *  */ 
+
+// 1a
+var num = 10
+console.log(typeof(num));  // logs: number
+
+// 2a
+var stringy = "hello";
+console.log(typeof(stringy)); // logs: string
+
+// 3a
+var booleanish = true;
+console.log(typeof(booleanish)); // logs: boolean
+
+// 4a
+var myArray = ['yellow', 'red', 'blue'];
+console.log(Array.isArray(myArray)); // logs: true
+
+// 5a
+var objectify = {person: 'yes', smelly: 'no', age: '234'};
+console.log(typeof(objectify));  // logs: object
+
+// 6a
+function greeting(firstName) {
+    return "Howdy, " + firstName + '!';
+}
+console.log(typeof(greeting)); // logs: function
+
+// 7a
+var undefineded
+console.log(typeof(undefineded));  // logs: undefined
+
+// 8a
+let neighbor = {
+    firstName: 'Fred',
+    lastName: 'Jones',
+    age: null
+};
+console.log(neighbor.age); // logs: null
+
+// 9a
+let maths = 0/0;
+console.log(maths);  // logs: NaN
+
+// 10a
+console.log(1/0);// logs Infinity
